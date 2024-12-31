@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management Dashboard - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-body">
+    <header class="main-header">
+        <h1>Event Management System</h1>
+        <div class="logout-container">
+            <button onclick="logout()" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="action-buttons">
+            <button class="btn action-btn" onclick="showPanel('add')">Add Event</button>
+            <button class="btn action-btn" onclick="showPanel('view')">View Events</button>
+        </div>
+
+        <div class="panels-container">
+            <div id="addPanel" class="panel">
+                <h2>Add New Event</h2>
+                <form id="eventForm">
+                    <div class="form-group">
+                        <input type="text" id="eventName" placeholder="Event Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="location" placeholder="Location" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="datetime-local" id="time" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="organizer" placeholder="Organizer Name" required>
+                    </div>
+                    <button type="submit" class="btn">Add Event</button>
+                </form>
+            </div>
+            
+            <div id="viewPanel" class="panel">
+                <h2>Events List</h2>
+                <div id="eventsList" class="event-grid">
+                    <!-- Events will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Update Event Modal -->
+    <div id="updateModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Update Event</h2>
+            <form id="updateEventForm">
+                <input type="hidden" id="updateEventId">
+                <div class="form-group">
+                    <input type="text" id="updateEventName" placeholder="Event Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="updateLocation" placeholder="Location" required>
+                </div>
+                <div class="form-group">
+                    <input type="datetime-local" id="updateTime" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="updateOrganizer" placeholder="Organizer Name" required>
+                </div>
+                <button type="submit" class="btn">Update Event</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <p>Created by: 
+            <span class="team-member">Tehreem</span> | 
+            <span class="team-member">Hafsa</span> | 
+            <span class="team-member">Lubna</span>
+        </p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
